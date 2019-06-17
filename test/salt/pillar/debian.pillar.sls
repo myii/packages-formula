@@ -3,7 +3,7 @@ packages:
     # A dict of "package: version" pairs:
     held:
       alien: 8.95
-      iotop: 0.6-1
+      iotop: 0.6-2
 
     # Alternativelly, held packages can also be specified as a list with
     # no versions. In this case, the package will be held in the installed
@@ -24,12 +24,8 @@ packages:
         - wget
         - git
   pips:
-    required:
-      pkgs:
-        - libpython2.7-dev
-        - python-pip
     wanted:
-      - dxpy
+      - shuft
       - attrs
     unwanted:
       - campbel
@@ -40,6 +36,7 @@ packages:
         timeout: 120
         default-timeout: 120
         # proxy: http://proxy.example.com:3128
+
   gems:
     wanted:
       - progressbar
@@ -48,6 +45,7 @@ packages:
       - diff-lcs
       - kitchen-vagrant
       - kwalify
+
   snaps:
     wanted:
       - hello-world
@@ -55,6 +53,33 @@ packages:
       - test-snapd-hello-classic
     unwanted:
       - goodbye-world
+
+  npms:
+    dir: /home/kitchen/npms      # The target directory in which to install the package, or None for global installation
+    user: kitchen                # The user to run NPM with (and to assign to `dir`)
+    group: kitchen               # The group to assign to `dir`
+    mode: 0755                 # The permissions to assign to `dir`
+    # registry: None             # The NPM registry from which to install the package 
+    # env: None                  # A list of environment variables to be set prior to execution
+    # force_reinstall: False     # Install the package even if it is already installed
+    required:
+      states:
+        - node.pkg
+    wanted:
+      # Valid formats:
+      #
+      # @google-cloud/bigquery@^0.9.6
+      # @foobar
+      # buffer-equal-constant-time@1.0.1
+      # coffee-script
+      # You need to quote the package if it starts with '@'
+      - '@davidodio/hello@2.3.0'
+      - hello-world-npm
+      - sax
+      - coffee-script@1.0.1
+    unwanted:
+      - gist
+
   archives:
     wanted:
       terminator:
