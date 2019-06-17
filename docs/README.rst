@@ -1,14 +1,26 @@
-================
-packages-formula
-================
+.. _readme:
+
+packages
+========
+
+|img_travis| |img_sr|
+
+.. |img_travis| image:: https://travis-ci.com/saltstack-formulas/packages-formula.svg?branch=master
+   :alt: Travis CI Build Status
+   :scale: 100%
+   :target: https://travis-ci.com/saltstack-formulas/packages-formula
+.. |img_sr| image:: https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg
+   :alt: Semantic Release
+   :scale: 100%
+   :target: https://github.com/semantic-release/semantic-release
 
 A simple 'packages manager' formula, to install/remove packages without further
 ado.
 
-.. image:: https://travis-ci.org/saltstack-formulas/packages-formula.svg?branch=master
+.. contents:: **Table of Contents**
 
 What this formula can do
-========================
+------------------------
 
 Many times, in the process of setting up a host/vm, you need to install/remove
 packages with no extra configuration or setup. This formula tries to help with
@@ -22,22 +34,38 @@ Debian/Redhat families), Python packages (using pip states) and Ruby gems
 It can also provide basic dependency management on certain other states/packages.
 
 What this formula can't do
-==========================
+--------------------------
 
 This formula is not intended to configure packages, nor setup services or daemons.
 When you need to do that for a package, you should probably be using another
 formula.
 
-.. note::
+General notes
+-------------
 
-    See the full `Salt Formulas installation and usage instructions
-    <http://docs.saltstack.com/en/latest/topics/development/conventions/formulas.html>`_.
+See the full `SaltStack Formulas installation and usage instructions
+<https://docs.saltstack.com/en/latest/topics/development/conventions/formulas.html>`_.
+
+If you are interested in writing or contributing to formulas, please pay attention to the `Writing Formula Section
+<https://docs.saltstack.com/en/latest/topics/development/conventions/formulas.html#writing-formulas>`_.
+
+If you want to use this formula, please pay attention to the ``FORMULA`` file and/or ``git tag``,
+which contains the currently released version. This formula is versioned according to `Semantic Versioning <http://semver.org/>`_.
+
+See `Formula Versioning Section <https://docs.saltstack.com/en/latest/topics/development/conventions/formulas.html#versioning>`_ for more details.
+
+Contributing to this repo
+-------------------------
+
+**Commit message formatting is significant!!**
+
+Please see :ref:`How to contribute <CONTRIBUTING>` for more details.
 
 Available states
-================
+----------------
 
 .. contents::
-    :local:
+   :local:
 
 ``packages``
 ------------
@@ -184,19 +212,50 @@ to install, in the format:
 
 ``name: url``
 
+
+
 Testing
-=======
+-------
 
-Testing is done with `Test Kitchen <http://kitchen.ci/>`_
-for machine setup and `inspec <https://www.inspec.io/docs/>`_
-for integration tests.
+Linux testing is done with ``kitchen-salt``.
 
-Tested on
+Requirements
+^^^^^^^^^^^^
 
-* Debian/9
-* Debian/8 (with backports)
-* Centos/7
-* Fedora/27
-* Ubuntu/16.04
-* Ubuntu/18.04
-* Opensuse/leap
+* Ruby
+* Docker
+
+.. code-block:: bash
+
+   $ gem install bundler
+   $ bundle install
+   $ bin/kitchen test [platform]
+
+Where ``[platform]`` is the platform name defined in ``kitchen.yml``,
+e.g. ``debian-9-2019-2-py3``.
+
+``bin/kitchen converge``
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+Creates the docker instance and runs the ``packages`` main state, ready for testing.
+
+``bin/kitchen verify``
+^^^^^^^^^^^^^^^^^^^^^^
+
+Runs the ``inspec`` tests on the actual instance.
+
+``bin/kitchen destroy``
+^^^^^^^^^^^^^^^^^^^^^^^
+
+Removes the docker instance.
+
+``bin/kitchen test``
+^^^^^^^^^^^^^^^^^^^^
+
+Runs all of the stages above in one go: i.e. ``destroy`` + ``converge`` + ``verify`` + ``destroy``.
+
+``bin/kitchen login``
+^^^^^^^^^^^^^^^^^^^^^
+
+Gives you SSH access to the instance for manual testing.
+
