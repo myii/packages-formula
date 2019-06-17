@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 # vim: ft=yaml
+---
 packages:
   tmpdir: /tmp/saltstack-packages-formula-archives
   remote_pkgs: {}
