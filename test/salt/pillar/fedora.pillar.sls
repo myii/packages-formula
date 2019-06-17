@@ -20,7 +20,7 @@ packages:
   # which breaks with pip > 18 (https://github.com/saltstack/salt/issues/49967)
   # pips:
   #   wanted:
-  #     - dxpy
+  #     - shuft
   #     - attrs
   #   unwanted:
   #     - campbel
