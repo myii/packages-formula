@@ -1,8 +1,9 @@
 # On some OSes+py3, /usr/bin/pip3 does not have a /usr/bin/pip link/file
 # and Inspec fails to correctly find the pip binary.
-# As there's no py2/py3 separate tools, this hack let's us overcome the issue
-
-if(File.exist?('/usr/bin/pip3'))
+# We can probably pass the suite's name as an attribute to inspec
+# but can't find how to do that so this flaky hack let's us overcome the issue
+# Please, please please, feel free to improve it :)
+if command('/usr/bin/pip3').exist?
   pip_binary = '/usr/bin/pip3'
 else
   pip_binary = '/usr/bin/pip'
