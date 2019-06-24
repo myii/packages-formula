@@ -4,16 +4,16 @@
 packages:
   pkgs:
     # A dict of "package: version" pairs:
-    held:
-      alien: 8.95
-      iotop: 0.6-24
+    # held:
+    #   alien: 8.95
+    #   iotop: 0.6-2
 
     # Alternativelly, held packages can also be specified as a list with
     # no versions. In this case, the package will be held in the installed
     # version.
-    # held:
-    #   - alien
-    #   - iotop
+    held:
+      - alien
+      - iotop
     wanted:
       - git
       - less
@@ -57,49 +57,41 @@ packages:
       - kitchen-vagrant
       - kwalify
 
-  snaps:
-    wanted:
-      - hello-world
-    classic:
-      - test-snapd-hello-classic
-    unwanted:
-      - goodbye-world
-
-  golang:
-    goget:
-      - github.com/golang/example/hello
-      - github.com/golang/example/outyet
-    clean:
-      - github.com/golang/example/hello
-      - github.com/golang/example/outyet
-
-  npms:
-    # yamllint disable rule:line-length
-    dir: /home/kitchen/npms   # The target directory in which to install the package, or None for global installation
-    user: kitchen             # The user to run NPM with (and to assign to `dir`)
-    group: kitchen            # The group to assign to `dir`
-    mode: '0755'              # The permissions to assign to `dir`
-    # registry: None          # The NPM registry from which to install the package
-    # env: None               # A list of environment variables to be set prior to execution
-    # force_reinstall: False  # Install the package even if it is already installed
-    # yamllint enable rule:line-length
-    required:
-      states:
-        - node.pkg
-    wanted:
-      # Valid formats:
-      #
-      # @google-cloud/bigquery@^0.9.6
-      # @foobar
-      # buffer-equal-constant-time@1.0.1
-      # coffee-script
-      # You need to quote the package if it starts with '@'
-      - '@davidodio/hello@2.3.0'
-      - hello-world-npm
-      - sax
-      - coffee-script@1.0.1
-    unwanted:
-      - gist
+  # snaps:
+  #   wanted:
+  #     - hello-world
+  #   classic:
+  #     - test-snapd-hello-classic
+  #   unwanted:
+  #     - goodbye-world
+  #
+  # yamllint disable rule:line-length
+  # npms:
+  #   dir: /home/kitchen/npms   # The target directory in which to install the package, or None for global installation
+  #   user: kitchen             # The user to run NPM with (and to assign to `dir`)
+  #   group: kitchen            # The group to assign to `dir`
+  #   mode: '0755'              # The permissions to assign to `dir`
+  #   # registry: None          # The NPM registry from which to install the package
+  #   # env: None               # A list of environment variables to be set prior to execution
+  #   # force_reinstall: False  # Install the package even if it is already installed
+  #   required:
+  #     states:
+  #       - node.pkg
+  #   wanted:
+  #     # Valid formats:
+  #     #
+  #     # @google-cloud/bigquery@^0.9.6
+  #     # @foobar
+  #     # buffer-equal-constant-time@1.0.1
+  #     # coffee-script
+  #     # You need to quote the package if it starts with '@'
+  #     - '@davidodio/hello@2.3.0'
+  #     - hello-world-npm
+  #     - sax
+  #     - coffee-script@1.0.1
+  #   unwanted:
+  #     - gist
+  # yamllint enable rule:line-length
 
   archives:
     wanted:
@@ -142,9 +134,6 @@ packages:
   remote_pkgs:
     zoom: 'https://zoom.us/client/latest/zoom_amd64.deb'
 
+  # Override the default setting to prevent wasteful delays in Travis
   retry_options:
-    # https://docs.saltstack.com/en/latest/ref/states/requisites.html#retrying-states
-    attempts: 5
-    until: true
-    interval: 30
-    splay: 20
+    attempts: 1
