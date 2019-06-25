@@ -1,7 +1,7 @@
 name: packages
 os: Debian, Ubuntu, Raspbian
 os_family: Debian
-version: 0.8.1
+version: 1.8.0
 release: 1
 minimum_version: 2017.7
 summary: packages formula
