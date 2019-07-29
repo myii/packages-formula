@@ -68,12 +68,12 @@ Available states
    :local:
 
 ``packages``
-------------
+^^^^^^^^^^^^
 
 Runs all the other states in the formula.
 
 ``packages.pkgs``
------------------
+^^^^^^^^^^^^^^^^^
 
 Allows you to manage system's packages. You can specify:
 
@@ -126,7 +126,7 @@ Allows you to manage system's packages. You can specify:
   correct installation.
 
 ``packages.pips``
------------------
+^^^^^^^^^^^^^^^^^
 
 You can specify:
 
@@ -141,7 +141,7 @@ You can specify:
   correct installation (ie, ``epel`` for RedHat families).
 
 ``packages.gems``
------------------
+^^^^^^^^^^^^^^^^^
 
 You can specify:
 
@@ -156,7 +156,7 @@ You can specify:
   correct installation (ie, ``epel`` for RedHat families).
 
 ``packages.npms``
------------------
+^^^^^^^^^^^^^^^^^
 
 This formula **DOES NOT** install ``nodejs/npm``, as it's outside of its scope:
 nodejs/npm that comes with the distros is usually outdated, so it's required to add
@@ -178,7 +178,7 @@ You can specify:
   correct installation (ie, ``epel`` for RedHat families).
 
 ``packages.archives``
--------------------
+^^^^^^^^^^^^^^^^^^^^^
 
 'Archive file` handler for common 'download' and 'checksum' states. All formats recognized by `salt.states.archive.extracted` (tar, rar, zip, etc) will be extracted. Alternatively `raw` formats are supported (`raw`, `bin`,) for standard and binary executable files.
 
@@ -188,7 +188,7 @@ You can specify:
 
 
 ``packages.snaps``
------------------
+^^^^^^^^^^^^^^^^^^
 
 You can specify:
 
@@ -205,13 +205,12 @@ You can specify:
     Centos has no native ``snapd`` package at this time.
 
 ``packages.remote_pkgs``
-------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 You can specify a dictionary of remote system packages (deb/rpm) that you want
 to install, in the format:
 
 ``name: url``
-
 
 
 Testing
