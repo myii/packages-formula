@@ -1,6 +1,6 @@
-name: packages
-title: Packages Formula
-maintainer: Saltstack-formulas org
+name: default
+title: packages formula
+maintainer: SaltStack Formulas
 license: Apache-2.0
 summary: Verify that packages can be installed/removed correctly
 supports:
@@ -10,3 +10,4 @@ supports:
   - platform-name: fedora
   - platform-name: opensuse
   - platform-name: suse
+  - platform-name: amazon
