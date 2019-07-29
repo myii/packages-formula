@@ -169,18 +169,13 @@ suites:
             - packages
       pillars_from_files:
         packages.sls: test/salt/pillar/debian.pillar.sls
+        node.sls: test/salt/pillar/node.pillar.sls
       pillars:
         top.sls:
           base:
             '*':
             - node
             - packages
-        node.sls:
-          node:
-            version: 12.4.0-1nodesource1
-            install_from_ppa: True
-            ppa:
-              repository_url: https://deb.nodesource.com/node_12.x
 
   - name: ubu18
     excludes:
@@ -309,11 +304,10 @@ suites:
             - packages
       pillars_from_files:
         packages.sls: test/salt/pillar/redhat.pillar.sls
+        epel.sls: test/salt/pillar/epel.pillar.sls
       pillars:
         top.sls:
           base:
             '*':
             - epel
             - packages
-        epel.sls:
-          disabled: false

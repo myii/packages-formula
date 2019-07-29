@@ -1,0 +1,3 @@
+epel:
+  lookup:
+    disabled: false
