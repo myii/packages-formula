@@ -43,6 +43,10 @@ platforms:
         - curl -o bootstrap-salt.sh -L https://bootstrap.saltstack.com
         - sh bootstrap-salt.sh -XdPbfrq -x python3 git develop
       run_command: /usr/lib/systemd/systemd
+    # Workaround to avoid intermittent failures on `opensuse-leap-15`:
+    # => SCP did not finish successfully (255):  (Net::SCP::Error)
+    transport:
+      max_ssh_sessions: 1
   - name: amazonlinux-2-develop-py2
     driver:
       image: netmanagers/salt-develop-py2:amazonlinux-2
@@ -67,6 +71,10 @@ platforms:
     driver:
       image: netmanagers/salt-2019.2-py3:opensuse-leap-15
       run_command: /usr/lib/systemd/systemd
+    # Workaround to avoid intermittent failures on `opensuse-leap-15`:
+    # => SCP did not finish successfully (255):  (Net::SCP::Error)
+    transport:
+      max_ssh_sessions: 1
   - name: amazonlinux-2-2019-2-py2
     driver:
       image: netmanagers/salt-2019.2-py2:amazonlinux-2
@@ -88,6 +96,10 @@ platforms:
     driver:
       image: netmanagers/salt-2018.3-py2:opensuse-leap-15
       run_command: /usr/lib/systemd/systemd
+    # Workaround to avoid intermittent failures on `opensuse-leap-15`:
+    # => SCP did not finish successfully (255):  (Net::SCP::Error)
+    transport:
+      max_ssh_sessions: 1
   - name: amazonlinux-2-2018-3-py2
     driver:
       image: netmanagers/salt-2018.3-py2:amazonlinux-2
@@ -110,6 +122,10 @@ platforms:
     driver:
       image: netmanagers/salt-2017.7-py2:opensuse-leap-15
       run_command: /usr/lib/systemd/systemd
+    # Workaround to avoid intermittent failures on `opensuse-leap-15`:
+    # => SCP did not finish successfully (255):  (Net::SCP::Error)
+    transport:
+      max_ssh_sessions: 1
   - name: amazonlinux-2-2017-7-py2
     driver:
       image: netmanagers/salt-2017.7-py2:amazonlinux-2
@@ -154,7 +170,6 @@ suites:
     verifier:
       inspec_tests:
         - path: test/integration/default
-
   - name: ubuntu
     includes:
       - ubuntu-1804-develop-py3
@@ -176,7 +191,6 @@ suites:
     verifier:
       inspec_tests:
         - path: test/integration/default
-
   - name: fedora30
     includes:
       - fedora-30-develop-py3
@@ -196,7 +210,6 @@ suites:
     verifier:
       inspec_tests:
         - path: test/integration/default
-
   - name: fedora29
     includes:
       - fedora-29-2018-3-py2
@@ -216,7 +229,6 @@ suites:
     verifier:
       inspec_tests:
         - path: test/integration/default
-
   - name: centos
     includes:
       - centos-7-develop-py3
@@ -224,10 +236,6 @@ suites:
       - centos-7-2018-3-py2
       - centos-6-2017-7-py2
     provisioner:
-      dependencies:
-        - name: epel
-          repo: git
-          source: https://github.com/saltstack-formulas/epel-formula.git
       state_top:
         base:
           '*':
@@ -239,10 +247,13 @@ suites:
               - packages
       pillars_from_files:
         packages.sls: test/salt/pillar/pillar.example.redhat
+      dependencies:
+        - name: epel
+          repo: git
+          source: https://github.com/saltstack-formulas/epel-formula.git
     verifier:
       inspec_tests:
         - path: test/integration/default
-
   - name: amazonlinux
     includes:
       - amazonlinux-2-develop-py2
@@ -250,10 +261,6 @@ suites:
       - amazonlinux-2-2018-3-py2
       - amazonlinux-2-2017-7-py2
     provisioner:
-      dependencies:
-        - name: epel
-          repo: git
-          source: https://github.com/saltstack-formulas/epel-formula.git
       state_top:
         base:
           '*':
@@ -265,10 +272,13 @@ suites:
               - packages
       pillars_from_files:
         packages.sls: test/salt/pillar/pillar.example.amazonlinux
+      dependencies:
+        - name: epel
+          repo: git
+          source: https://github.com/saltstack-formulas/epel-formula.git
     verifier:
       inspec_tests:
         - path: test/integration/default
-
   - name: suse
     includes:
       - opensuse-leap-15-develop-py3
@@ -276,10 +286,6 @@ suites:
       - opensuse-leap-15-2018-3-py2
       - opensuse-leap-15-2017-7-py2
     provisioner:
-#      dependencies:
-#        - name: epel
-#          repo: git
-#          source: https://github.com/saltstack-formulas/epel-formula.git
       state_top:
         base:
           '*':
