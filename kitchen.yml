@@ -249,7 +249,7 @@ suites:
         packages.sls: pillar.example
     verifier:
       inspec_tests:
-        - path: test/integration/debian
+        - path: test/integration/default
   - name: ubuntu
     includes:
       - ubuntu-1804-master-py3
@@ -267,10 +267,10 @@ suites:
             '*':
               - packages
       pillars_from_files:
-        packages.sls: test/salt/pillar/pillar.example.ubuntu.1804
+        packages.sls: test/salt/pillar/ubuntu1804.sls
     verifier:
       inspec_tests:
-        - path: test/integration/ubuntu
+        - path: test/integration/default
   - name: fedora
     includes:
       - fedora-31-master-py3
@@ -288,10 +288,10 @@ suites:
             '*':
               - packages
       pillars_from_files:
-        packages.sls: test/salt/pillar/pillar.example.fedora
+        packages.sls: test/salt/pillar/fedora.sls
     verifier:
       inspec_tests:
-        - path: test/integration/fedora
+        - path: test/integration/default
   - name: centos
     includes:
       - centos-8-master-py3
@@ -310,14 +310,14 @@ suites:
             '*':
               - packages
       pillars_from_files:
-        packages.sls: test/salt/pillar/pillar.example.redhat
+        packages.sls: test/salt/pillar/redhat.sls
       dependencies:
         - name: epel
           repo: git
           source: https://github.com/saltstack-formulas/epel-formula.git
     verifier:
       inspec_tests:
-        - path: test/integration/centos
+        - path: test/integration/default
   - name: amazon
     includes:
       - amazonlinux-2-master-py2
@@ -335,14 +335,14 @@ suites:
             '*':
               - packages
       pillars_from_files:
-        packages.sls: test/salt/pillar/pillar.example.amazon
+        packages.sls: test/salt/pillar/amazon.sls
       dependencies:
         - name: epel
           repo: git
           source: https://github.com/saltstack-formulas/epel-formula.git
     verifier:
       inspec_tests:
-        - path: test/integration/amazon
+        - path: test/integration/default
   - name: suse
     includes:
       - opensuse-leap-151-master-py3
@@ -360,10 +360,10 @@ suites:
             '*':
               - packages
       pillars_from_files:
-        packages.sls: test/salt/pillar/pillar.example.opensuse
+        packages.sls: test/salt/pillar/opensuse.sls
     verifier:
       inspec_tests:
-        - path: test/integration/suse
+        - path: test/integration/default
   - name: arch
     includes:
       - arch-base-latest-master-py2
@@ -381,7 +381,7 @@ suites:
             '*':
               - packages
       pillars_from_files:
-        packages.sls: test/salt/pillar/pillar.example.arch
+        packages.sls: test/salt/pillar/arch.sls
     verifier:
       inspec_tests:
-        - path: test/integration/arch
+        - path: test/integration/default
