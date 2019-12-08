@@ -18,32 +18,24 @@ platforms:
       provision_command:
         - curl -o bootstrap-salt.sh -L https://bootstrap.saltstack.com
         - sh bootstrap-salt.sh -XdPbfrq -x python3 git master
-
-  ## SALT `master`
   - name: ubuntu-1804-master-py3
     driver:
       image: netmanagers/salt-master-py3:ubuntu-18.04
       provision_command:
         - curl -o bootstrap-salt.sh -L https://bootstrap.saltstack.com
         - sh bootstrap-salt.sh -XdPbfrq -x python3 git master
-
-  ## SALT `master`
   - name: centos-8-master-py3
     driver:
       image: netmanagers/salt-master-py3:centos-8
       provision_command:
         - curl -o bootstrap-salt.sh -L https://bootstrap.saltstack.com
         - sh bootstrap-salt.sh -XdPbfrq -x python3 git master
-
-  ## SALT `master`
   - name: fedora-31-master-py3
     driver:
       image: netmanagers/salt-master-py3:fedora-31
       provision_command:
         - curl -o bootstrap-salt.sh -L https://bootstrap.saltstack.com
         - sh bootstrap-salt.sh -XdPbfrq -x python3 git master
-
-  ## SALT `master`
   - name: opensuse-leap-151-master-py3
     driver:
       image: netmanagers/salt-master-py3:opensuse-leap-15.1
@@ -55,8 +47,6 @@ platforms:
     # => SCP did not finish successfully (255):  (Net::SCP::Error)
     transport:
       max_ssh_sessions: 1
-
-  ## SALT `master`
   # Use the `develop` image temporarily until the `master` image is available
   # Not changing the name to minimise disruption across all of the formulas
   - name: amazonlinux-2-master-py2
@@ -65,8 +55,6 @@ platforms:
       provision_command:
         - curl -o bootstrap-salt.sh -L https://bootstrap.saltstack.com
         - sh bootstrap-salt.sh -XdPbfrq -x python2 git develop
-
-  ## SALT `master`
   - name: arch-base-latest-master-py2
     driver:
       image: netmanagers/salt-master-py2:arch-base-latest
@@ -79,28 +67,18 @@ platforms:
   - name: debian-10-2019-2-py3
     driver:
       image: netmanagers/salt-2019.2-py3:debian-10
-
-  ## SALT `2019.2`
   - name: debian-9-2019-2-py3
     driver:
       image: netmanagers/salt-2019.2-py3:debian-9
-
-  ## SALT `2019.2`
   - name: ubuntu-1804-2019-2-py3
     driver:
       image: netmanagers/salt-2019.2-py3:ubuntu-18.04
-
-  ## SALT `2019.2`
   - name: centos-8-2019-2-py3
     driver:
       image: netmanagers/salt-2019.2-py3:centos-8
-
-  ## SALT `2019.2`
   - name: fedora-31-2019-2-py3
     driver:
       image: netmanagers/salt-2019.2-py3:fedora-31
-
-  ## SALT `2019.2`
   - name: opensuse-leap-151-2019-2-py3
     driver:
       image: netmanagers/salt-2019.2-py3:opensuse-leap-15.1
@@ -109,18 +87,12 @@ platforms:
     # => SCP did not finish successfully (255):  (Net::SCP::Error)
     transport:
       max_ssh_sessions: 1
-
-  ## SALT `2019.2`
   - name: centos-7-2019-2-py2
     driver:
       image: netmanagers/salt-2019.2-py2:centos-7
-
-  ## SALT `2019.2`
   - name: amazonlinux-2-2019-2-py2
     driver:
       image: netmanagers/salt-2019.2-py2:amazonlinux-2
-
-  ## SALT `2019.2`
   - name: arch-base-latest-2019-2-py2
     driver:
       image: netmanagers/salt-2019.2-py2:arch-base-latest
@@ -130,23 +102,15 @@ platforms:
   - name: fedora-30-2018-3-py3
     driver:
       image: netmanagers/salt-2018.3-py3:fedora-30
-
-  ## SALT `2018.3`
   - name: debian-9-2018-3-py2
     driver:
       image: netmanagers/salt-2018.3-py2:debian-9
-
-  ## SALT `2018.3`
   - name: ubuntu-1604-2018-3-py2
     driver:
       image: netmanagers/salt-2018.3-py2:ubuntu-16.04
-
-  ## SALT `2018.3`
   - name: centos-7-2018-3-py2
     driver:
       image: netmanagers/salt-2018.3-py2:centos-7
-
-  ## SALT `2018.3`
   - name: opensuse-leap-151-2018-3-py2
     driver:
       image: netmanagers/salt-2018.3-py2:opensuse-leap-15.1
@@ -155,13 +119,9 @@ platforms:
     # => SCP did not finish successfully (255):  (Net::SCP::Error)
     transport:
       max_ssh_sessions: 1
-
-  ## SALT `2018.3`
   - name: amazonlinux-2-2018-3-py2
     driver:
       image: netmanagers/salt-2018.3-py2:amazonlinux-2
-
-  ## SALT `2018.3`
   - name: arch-base-latest-2018-3-py2
     driver:
       image: netmanagers/salt-2018.3-py2:arch-base-latest
@@ -171,24 +131,16 @@ platforms:
   - name: debian-8-2017-7-py2
     driver:
       image: netmanagers/salt-2017.7-py2:debian-8
-
-  ## SALT `2017.7`
   - name: ubuntu-1604-2017-7-py2
     driver:
       image: netmanagers/salt-2017.7-py2:ubuntu-16.04
-
-  ## SALT `2017.7`
   - name: centos-6-2017-7-py2
     driver:
       image: netmanagers/salt-2017.7-py2:centos-6
       run_command: /sbin/init
-
-  ## SALT `2017.7`
   - name: fedora-30-2017-7-py2
     driver:
       image: netmanagers/salt-2017.7-py2:fedora-30
-
-  ## SALT `2017.7`
   - name: opensuse-leap-151-2017-7-py2
     driver:
       image: netmanagers/salt-2017.7-py2:opensuse-leap-15.1
@@ -197,13 +149,9 @@ platforms:
     # => SCP did not finish successfully (255):  (Net::SCP::Error)
     transport:
       max_ssh_sessions: 1
-
-  ## SALT `2017.7`
   - name: amazonlinux-2-2017-7-py2
     driver:
       image: netmanagers/salt-2017.7-py2:amazonlinux-2
-
-  ## SALT `2017.7`
   - name: arch-base-latest-2017-7-py2
     driver:
       image: netmanagers/salt-2017.7-py2:arch-base-latest
@@ -246,7 +194,7 @@ suites:
             '*':
               - packages
       pillars_from_files:
-        packages.sls: pillar.example
+        packages.sls: test/salt/pillar/debian.sls
     verifier:
       inspec_tests:
         - path: test/integration/default
