@@ -303,6 +303,7 @@ suites:
       state_top:
         base:
           '*':
+            - epel
             - packages
       pillars:
         top.sls:
@@ -328,6 +329,7 @@ suites:
       state_top:
         base:
           '*':
+            - epel
             - packages
       pillars:
         top.sls:
