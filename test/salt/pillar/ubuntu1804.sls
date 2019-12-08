@@ -1,3 +1,6 @@
+# -*- coding: utf-8 -*-
+# vim: ft=yaml
+---
 packages:
   pkgs:
     # A dict of "package: version" pairs:
@@ -48,7 +51,7 @@ packages:
       - diff-lcs
       - kitchen-vagrant
       - kwalify
-  # Disable Snaps testing in Ubuntu 18 due to 
+  # Disable Snaps testing in Ubuntu 18 due to
   # https://github.com/saltstack-formulas/packages-formula/issues/44
   # snaps:
   #   wanted:
@@ -61,34 +64,39 @@ packages:
     wanted:
       terminator:
         dest: /usr/local/terminator/
-        options: '--strip-components=1'  #recommended option, but beware tarbombs
+        options: '--strip-components=1'  # recommended option, but beware tarbombs
         dl:
           format: tar
+          # yamllint disable rule:line-length
           source: https://launchpad.net/terminator/gtk3/1.91/+download/terminator-1.91.tar.gz
-          #hashurl: https://launchpad.net/terminator/gtk3/1.91/+download/terminator-1.91.tar.gz/+md5
+          # hashurl: https://launchpad.net/terminator/gtk3/1.91/+download/terminator-1.91.tar.gz/+md5
+          # yamllint enable rule:line-length
           hashsum: md5=2eed999d7a41f2e18eaa511bbbf80f58
       phantomjs:
-        dest: /usr/local/src/    #beware tarbombs
+        dest: /usr/local/src/  # beware tarbombs
         user: root
         mode: '0700'
         dl:
           format: tar
+          # yamllint disable rule:line-length
           source: https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-2.1.1-linux-x86_64.tar.bz2
           hashsum: md5=1c947d57fce2f21ce0b43fe2ed7cd361
+          # yamllint enable rule:line-length
       blockbox:
         dest: /usr/local/src/
         dl:
           format: raw
+          # yamllint disable-line rule:line-length
           source: https://raw.githubusercontent.com/openstack/cinder/master/contrib/block-box/docker-compose.yml
           hashsum: 1751f8e4f6b4cddd8c4843a0f4473274
       kubectl:
         dest: /usr/local/bin
         dl:
           format: bin
+          # yamllint disable-line rule:line-length
           source: https://storage.googleapis.com/kubernetes-release/release/v1.12.0/bin/darwin/amd64/kubectl
     unwanted:
       - /usr/local/boring_archive_software
 
   remote_pkgs:
     zoom: 'https://zoom.us/client/latest/zoom_amd64.deb'
-
