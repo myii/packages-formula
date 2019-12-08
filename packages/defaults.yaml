@@ -51,7 +51,7 @@ packages:
       archives: {}  # note: dict
   retry_options:
     # https://docs.saltstack.com/en/latest/ref/states/requisites.html#retrying-states
-    attempts: 3
+    attempts: 1
     until: true
     interval: 60
     splay: 10
