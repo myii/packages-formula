@@ -60,7 +60,7 @@ end
 held_packages = {}
 
 unheld_packages = (common_packages + platform_packages).flatten.uniq
-all_packages = (unheld_packages + held_packages.keys.map { |k| k.to_s }).flatten.uniq
+all_packages = (unheld_packages + held_packages.keys.map(&:to_s)).flatten.uniq
 
 ### WANTED/REQUIRED/HELD
 control 'Wanted/Required/Held packages' do
