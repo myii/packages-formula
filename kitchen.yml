@@ -187,14 +187,21 @@ suites:
       state_top:
         base:
           '*':
+            - node
             - packages
       pillars:
         top.sls:
           base:
             '*':
+              - node
               - packages
       pillars_from_files:
+        node.sls: test/salt/pillar/node.sls
         packages.sls: test/salt/pillar/debian.sls
+      dependencies:
+        - name: node
+          repo: git
+          source: https://github.com/saltstack-formulas/node-formula.git
     verifier:
       inspec_tests:
         - path: test/integration/default
