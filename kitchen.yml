@@ -18,6 +18,7 @@ platforms:
       provision_command:
         - curl -o bootstrap-salt.sh -L https://bootstrap.saltstack.com
         - sh bootstrap-salt.sh -XdPbfrq -x python3 git master
+        - apt-get install -y snapd
   - name: ubuntu-1804-master-py3
     driver:
       image: netmanagers/salt-master-py3:ubuntu-18.04
@@ -70,9 +71,14 @@ platforms:
   - name: debian-9-2019-2-py3
     driver:
       image: netmanagers/salt-2019.2-py3:debian-9
+      provision_command:
+        - apt-get install -y snapd
   - name: ubuntu-1804-2019-2-py3
     driver:
       image: netmanagers/salt-2019.2-py3:ubuntu-18.04
+      # provision_command:
+      #   - echo 'export PATH=${PATH}:/usr/local/go/bin' >/etc/default/golang.sh
+      #   - export PATH="${PATH}:/usr/local/go/bin"
   - name: centos-8-2019-2-py3
     driver:
       image: netmanagers/salt-2019.2-py3:centos-8
@@ -105,6 +111,8 @@ platforms:
   - name: debian-9-2018-3-py2
     driver:
       image: netmanagers/salt-2018.3-py2:debian-9
+      provision_command:
+        - apt-get install -y snapd
   - name: ubuntu-1604-2018-3-py2
     driver:
       image: netmanagers/salt-2018.3-py2:ubuntu-16.04
@@ -131,6 +139,8 @@ platforms:
   - name: debian-8-2017-7-py2
     driver:
       image: netmanagers/salt-2017.7-py2:debian-8
+      provision_command:
+        - apt-get install -y snapd
   - name: ubuntu-1604-2017-7-py2
     driver:
       image: netmanagers/salt-2017.7-py2:ubuntu-16.04
@@ -215,14 +225,21 @@ suites:
       state_top:
         base:
           '*':
+            - golang.package
             - packages
       pillars:
         top.sls:
           base:
             '*':
+              - golang
               - packages
       pillars_from_files:
+        golang.sls: test/salt/pillar/golang.sls
         packages.sls: test/salt/pillar/ubuntu1804.sls
+      dependencies:
+        - name: golang
+          repo: git
+          source: https://github.com/saltstack-formulas/golang-formula.git
     verifier:
       inspec_tests:
         - path: test/integration/default

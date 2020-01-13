@@ -89,12 +89,12 @@ packages:
           # yamllint disable-line rule:line-length
           source: https://raw.githubusercontent.com/openstack/cinder/master/contrib/block-box/docker-compose.yml
           hashsum: 1751f8e4f6b4cddd8c4843a0f4473274
-      golang:
-        dest: /usr/local
-        dl:
-          format: tar
-          source: https://dl.google.com/go/go1.12.7.linux-amd64.tar.gz
-          hashsum: 66d83bfb5a9ede000e33c6579a91a29e6b101829ad41fffb5c5bb6c900e109d9
+    #   golang:
+    #     dest: /usr/local
+    #     dl:
+    #       format: tar
+    #       source: https://dl.google.com/go/go1.12.7.linux-amd64.tar.gz
+    #       hashsum: 66d83bfb5a9ede000e33c6579a91a29e6b101829ad41fffb5c5bb6c900e109d9
     unwanted:
       - /usr/local/boring_archive_software
 

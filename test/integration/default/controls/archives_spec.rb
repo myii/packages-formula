@@ -17,7 +17,7 @@ control 'Archive packages' do
       it { should exist }
     end
   end
-  describe file('/usr/local/go/bin/go') do
-    it { should be_executable }
-  end
+  # describe file('/usr/local/go/bin/go') do
+  #   it { should be_executable }
+  # end
 end
