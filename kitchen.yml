@@ -68,6 +68,8 @@ platforms:
   - name: debian-10-2019-2-py3
     driver:
       image: netmanagers/salt-2019.2-py3:debian-10
+      provision_command:
+        - apt-get install -y snapd
   - name: debian-9-2019-2-py3
     driver:
       image: netmanagers/salt-2019.2-py3:debian-9
@@ -76,9 +78,6 @@ platforms:
   - name: ubuntu-1804-2019-2-py3
     driver:
       image: netmanagers/salt-2019.2-py3:ubuntu-18.04
-      # provision_command:
-      #   - echo 'export PATH=${PATH}:/usr/local/go/bin' >/etc/default/golang.sh
-      #   - export PATH="${PATH}:/usr/local/go/bin"
   - name: centos-8-2019-2-py3
     driver:
       image: netmanagers/salt-2019.2-py3:centos-8
@@ -139,8 +138,6 @@ platforms:
   - name: debian-8-2017-7-py2
     driver:
       image: netmanagers/salt-2017.7-py2:debian-8
-      provision_command:
-        - apt-get install -y snapd
   - name: ubuntu-1604-2017-7-py2
     driver:
       image: netmanagers/salt-2017.7-py2:ubuntu-16.04
@@ -203,10 +200,8 @@ suites:
         top.sls:
           base:
             '*':
-              - node
               - packages
       pillars_from_files:
-        node.sls: test/salt/pillar/node.sls
         packages.sls: test/salt/pillar/debian.sls
       dependencies:
         - name: node
@@ -231,11 +226,9 @@ suites:
         top.sls:
           base:
             '*':
-              - golang
               - packages
       pillars_from_files:
-        golang.sls: test/salt/pillar/golang.sls
-        packages.sls: test/salt/pillar/ubuntu1804.sls
+        packages.sls: test/salt/pillar/ubuntu.sls
       dependencies:
         - name: golang
           repo: git
