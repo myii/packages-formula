@@ -39,6 +39,7 @@ packages:
         - libpython2.7-dev
         - python-pip
     wanted:
+      - setuptools
       - dxpy
       - attrs
     unwanted:
