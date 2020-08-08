@@ -350,4 +350,4 @@ suites:
         packages.sls: test/salt/pillar/windows.sls
     verifier:
       inspec_tests:
-        - path: test/integration/default
+        - path: test/integration/windows
