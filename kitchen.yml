@@ -333,3 +333,21 @@ suites:
     verifier:
       inspec_tests:
         - path: test/integration/default
+  - name: windows
+    includes:
+      - windows-81-latest-py3
+    provisioner:
+      state_top:
+        base:
+          '*':
+            - packages.chocolatey
+      pillars:
+        top.sls:
+          base:
+            '*':
+              - packages
+      pillars_from_files:
+        packages.sls: test/salt/pillar/windows.sls
+    verifier:
+      inspec_tests:
+        - path: test/integration/default

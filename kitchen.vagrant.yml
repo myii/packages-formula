@@ -1,0 +1,27 @@
+# -*- coding: utf-8 -*-
+# vim: ft=yaml
+---
+driver:
+  name: vagrant
+
+platforms:
+  - name: windows-81-latest-py3
+    driver:
+      box: techneg/win81x64-pro-salt
+      gui: false
+      linked_clone: true
+    provisioner:
+      init_environment: >
+        salt-call --local state.single file.managed
+        C:\Users\vagrant\AppData\Local\Temp\kitchen\srv\salt\win\repo-ng\salt-winrepo-ng\chocolatey\init.sls
+        source=https://github.com/saltstack/salt-winrepo-ng/raw/master/chocolatey/init.sls
+        skip_verify=True makedirs=True;
+        salt-call --local state.single file.managed
+        C:\Users\vagrant\AppData\Local\Temp\kitchen\srv\salt\win\repo-ng\salt-winrepo-ng\chocolatey\install.cmd
+        source=https://github.com/saltstack/salt-winrepo-ng/raw/master/chocolatey/install.cmd
+        skip_verify=True makedirs=True;
+        salt-call --local state.single file.managed
+        C:\Users\vagrant\AppData\Local\Temp\kitchen\srv\salt\win\repo-ng\salt-winrepo-ng\chocolatey\uninstall.cmd
+        source=https://github.com/saltstack/salt-winrepo-ng/raw/master/chocolatey/uninstall.cmd
+        skip_verify=True makedirs=True;
+        exit 0
