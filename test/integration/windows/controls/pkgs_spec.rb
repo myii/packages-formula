@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-pkgs_wanted = %w[adobereader Firefox jq notepadplusplus]
+pkgs_wanted = %w[Firefox jq notepadplusplus]
 pkgs_unwanted = %w[GoogleChrome hg]
 
 ### WANTED

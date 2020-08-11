@@ -3,8 +3,9 @@
 ---
 packages:
   chocolatey:
+    required:
+      pkgs: []
     wanted:
-      adobereader: {}
       Firefox:
         package_args: "/l:en-GB"
       jq:
