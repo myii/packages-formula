@@ -13,17 +13,4 @@ platforms:
 provisioner:
   salt_install: bootstrap
   salt_bootstrap_options: -pythonVersion 3
-  init_environment: >
-    C:\salt\salt-call --local state.single file.managed
-    C:\Users\kitchen\AppData\Local\Temp\kitchen\srv\salt\win\repo-ng\salt-winrepo-ng\chocolatey\init.sls
-    source=https://github.com/saltstack/salt-winrepo-ng/raw/master/chocolatey/init.sls
-    skip_verify=True makedirs=True;
-    C:\salt\salt-call --local state.single file.managed
-    C:\Users\kitchen\AppData\Local\Temp\kitchen\srv\salt\win\repo-ng\salt-winrepo-ng\chocolatey\install.cmd
-    source=https://github.com/saltstack/salt-winrepo-ng/raw/master/chocolatey/install.cmd
-    skip_verify=True makedirs=True;
-    C:\salt\salt-call --local state.single file.managed
-    C:\Users\kitchen\AppData\Local\Temp\kitchen\srv\salt\win\repo-ng\salt-winrepo-ng\chocolatey\uninstall.cmd
-    source=https://github.com/saltstack/salt-winrepo-ng/raw/master/chocolatey/uninstall.cmd
-    skip_verify=True makedirs=True;
-    exit 0
+  init_environment: ""
