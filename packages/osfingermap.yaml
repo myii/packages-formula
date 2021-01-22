@@ -1,13 +1,19 @@
 # -*- coding: utf-8 -*-
 # vim: ft=yaml
 ---
-RedHat:
+CentOS Linux-6:
   pkgs:
     required:
       pkgs:
         - yum-plugin-versionlock
 
-Fedora:
+CentOS Linux-7:
+  pkgs:
+    required:
+      pkgs:
+        - yum-plugin-versionlock
+
+CentOS Linux-8:
   pkgs:
     required:
       pkgs:
@@ -15,7 +21,3 @@ Fedora:
   snaps:
     collides: ['snap']
     symlink: true
-
-CentOS:
-  snaps:
-    packages: []
