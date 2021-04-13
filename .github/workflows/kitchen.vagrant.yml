@@ -15,7 +15,7 @@ jobs:
       matrix:
         instance:
           - windows-windows-10-latest-py3
-          - windows-windows-81-latest-py3
+          # - windows-windows-81-latest-py3
     steps:
       - name: 'Check out code'
         uses: 'actions/checkout@v2'
