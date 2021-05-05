@@ -1,0 +1,265 @@
+= Changelog
+
+:sectnums!:
+
+== link:++https://github.com/saltstack-formulas/packages-formula/compare/v0.12.0...v0.13.0++[0.13.0^] (2021-03-26)
+
+=== Continuous Integration
+
+* *windows:* test using GitHub Actions
+(https://github.com/saltstack-formulas/packages-formula/commit/e7bbefa9f336f19cd7e673d49f6316291557b1e9[e7bbefa^])
+* enable Vagrant-based testing using GitHub Actions
+(https://github.com/saltstack-formulas/packages-formula/commit/49fc85dfed0fbc0c3e35f20a45f22f2353810e99[49fc85d^])
+* *gemfile+lock:* use `ssf` customised `kitchen-docker` repo [skip ci]
+(https://github.com/saltstack-formulas/packages-formula/commit/bd17a49de0ec6ae8fb3b59a62c1226d27148bd94[bd17a49^])
+* *kitchen+ci:* use latest pre-salted images (after CVE) [skip ci]
+(https://github.com/saltstack-formulas/packages-formula/commit/c2e9774dc7484ae10397c837b015ddd56a02c313[c2e9774^])
+* *kitchen+gitlab-ci:* use latest pre-salted images [skip ci]
+(https://github.com/saltstack-formulas/packages-formula/commit/592e3d1e4744e4d5b5ad88b1429f49bd62ed9f65[592e3d1^])
+
+=== Documentation
+
+* *readme:* add `Testing with Vagrant` section
+(https://github.com/saltstack-formulas/packages-formula/commit/d734d434c9e0a428cb484438e421c253e591b0d7[d734d43^])
+
+=== Features
+
+* *gentoo:* add support and CI
+(https://github.com/saltstack-formulas/packages-formula/commit/534a1f6f2bb11e52e1b9211427c00fc1030dd687[534a1f6^])
+
+=== Tests
+
+* *pkgs_spec:* fix `rubocop` violations (`--enable-pending-cops`)
+(https://github.com/saltstack-formulas/packages-formula/commit/f7a6fcf707bb451a687bfbdbf33b74cace158254[f7a6fcf^])
+* standardise use of `share` suite & `_mapdata` state [skip ci]
+(https://github.com/saltstack-formulas/packages-formula/commit/79257d555a867fa23e4ceda93d008bf07869b3e7[79257d5^])
+
+== link:++https://github.com/saltstack-formulas/packages-formula/compare/v0.11.2...v0.12.0++[0.12.0^] (2021-02-10)
+
+=== Continuous Integration
+
+* *commitlint:* ensure `upstream/master` uses main repo URL [skip ci]
+(https://github.com/saltstack-formulas/packages-formula/commit/f893e2af43bf547d64cbbb3b06c27bef767c65ff[f893e2a^])
+* *gitlab-ci:* add `rubocop` linter (with `allow_failure`) [skip ci]
+(https://github.com/saltstack-formulas/packages-formula/commit/7dcb3d86cda7d66ae5e17b0d587c74ffaad8e24d[7dcb3d8^])
+* *pre-commit:* update hook for `rubocop` [skip ci]
+(https://github.com/saltstack-formulas/packages-formula/commit/e36498ed032a513ac924a4560c45be92b544a92a[e36498e^])
+
+=== Features
+
+* *centos-8:* added RedHat,CentOS and Oracle linux 8 support
+(https://github.com/saltstack-formulas/packages-formula/commit/75526cce61433a5b5edb5708618b380655e49de1[75526cc^])
+
+== link:++https://github.com/saltstack-formulas/packages-formula/compare/v0.11.1...v0.11.2++[0.11.2^] (2020-12-16)
+
+=== Continuous Integration
+
+* *gitlab-ci:* use GitLab CI as Travis CI replacement
+(https://github.com/saltstack-formulas/packages-formula/commit/bdab6c1fceec694f3e1fedce4c0d0116735de20c[bdab6c1^])
+
+=== Tests
+
+* *debian:* disable wanted snap testing (GitLab CI failure) [skip ci]
+(https://github.com/saltstack-formulas/packages-formula/commit/4c047c4e9f4875d86ef546ab8db830a7675251f7[4c047c4^])
+
+== link:++https://github.com/saltstack-formulas/packages-formula/compare/v0.11.0...v0.11.1++[0.11.1^] (2020-10-23)
+
+=== Bug Fixes
+
+* *states:* deploy packages only if required
+(https://github.com/saltstack-formulas/packages-formula/commit/c9fe187e1677cc2645d7ed479ab2d32749d38d30[c9fe187^])
+
+=== Continuous Integration
+
+* *kitchen:* use `saltimages` Docker Hub where available [skip ci]
+(https://github.com/saltstack-formulas/packages-formula/commit/3a80123db0be1d8f291c606f61634fa2c8597c5e[3a80123^])
+* *pre-commit:* add to formula [skip ci]
+(https://github.com/saltstack-formulas/packages-formula/commit/62e73fe14cab553603aab6d986199c05457ddcff[62e73fe^])
+* *pre-commit:* enable/disable `rstcheck` as relevant [skip ci]
+(https://github.com/saltstack-formulas/packages-formula/commit/22fa2e873719d296fab0a9af83c56732b158f275[22fa2e8^])
+* *pre-commit:* finalise `rstcheck` configuration [skip ci]
+(https://github.com/saltstack-formulas/packages-formula/commit/d64b8d8b73fe3ed531c58b6dfdbf5f69201e5cf2[d64b8d8^])
+
+=== Tests
+
+* *npm:* changed package to an existing one
+(https://github.com/saltstack-formulas/packages-formula/commit/8a51ae5f559d5918f37bc0b3fc19da7cc3c88045[8a51ae5^])
+* *snaps:* disable classic snaps testing in debian
+(https://github.com/saltstack-formulas/packages-formula/commit/bb60deb20bd7b5cb819f88a1257bba8343729731[bb60deb^])
+* *ubuntu:* update for `golang` fix [skip ci]
+(https://github.com/saltstack-formulas/packages-formula/commit/0226c880b8f5b452e6be710b5d1afd3c2d62a6f4[0226c88^])
+
+== link:++https://github.com/saltstack-formulas/packages-formula/compare/v0.10.2...v0.11.0++[0.11.0^] (2020-06-01)
+
+=== Continuous Integration
+
+* *kitchen+travis:* use latest pre-salted images
+(https://github.com/saltstack-formulas/packages-formula/commit/bfcdd9cd591837723f8773005e0574815489b61a[bfcdd9c^])
+
+=== Features
+
+* *fedora:* update for Python 3
+(https://github.com/saltstack-formulas/packages-formula/commit/0175a4811285c4a11f2fa3ac6e4507bc913c0a1d[0175a48^])
+
+== link:++https://github.com/saltstack-formulas/packages-formula/compare/v0.10.1...v0.10.2++[0.10.2^] (2020-06-01)
+
+=== Bug Fixes
+
+* *pillar:* update `node.pkg` => `node.package`
+(https://github.com/saltstack-formulas/packages-formula/commit/a6d3c98ae7cc3949feb060c95817250513536e8f[a6d3c98^])
+
+=== Documentation
+
+* *readme:* fix various issues inc. not rendering properly [skip ci]
+(https://github.com/saltstack-formulas/packages-formula/commit/5701df06a9f60d1c3aa717d9a295655c14075223[5701df0^])
+
+== link:++https://github.com/saltstack-formulas/packages-formula/compare/v0.10.0...v0.10.1++[0.10.1^] (2020-06-01)
+
+=== Bug Fixes
+
+* *python:* os default to python3
+(https://github.com/saltstack-formulas/packages-formula/commit/662a8d092da7c0c6fe92ad6aed974e1c87c1f58d[662a8d0^])
+
+=== Continuous Integration
+
+* *gemfile.lock:* add to repo with updated `Gemfile` [skip ci]
+(https://github.com/saltstack-formulas/packages-formula/commit/0628bf029f0d80f8caab45c191ba28ef2e0af18a[0628bf0^])
+* *kitchen+travis:* remove `master-py2-arch-base-latest` [skip ci]
+(https://github.com/saltstack-formulas/packages-formula/commit/fb311a42074acf58c3e9e39d6281d7faf766dede[fb311a4^])
+* *travis:* add notifications => zulip [skip ci]
+(https://github.com/saltstack-formulas/packages-formula/commit/57a1b1449f7119206f4a7f634b61cb7a6724c494[57a1b14^])
+* *workflows/commitlint:* add to repo [skip ci]
+(https://github.com/saltstack-formulas/packages-formula/commit/9220ceb46b98628a8292e0f5f4cbf24164acc1d5[9220ceb^])
+
+== link:++https://github.com/saltstack-formulas/packages-formula/compare/v0.9.0...v0.10.0++[0.10.0^] (2020-03-30)
+
+=== Bug Fixes
+
+* *chocolatey:* ensure states only run on Windows systems
+(https://github.com/saltstack-formulas/packages-formula/commit/c1d680a9dd0863497ca004dcf41378fa0e5707f9[c1d680a^])
+* *chocolatey:* verify chocolatey dicts are not empty
+(https://github.com/saltstack-formulas/packages-formula/commit/385b2238f4c8bc9389728cc6f90e320bc74b077c[385b223^])
+
+=== Documentation
+
+* *changelog:* merge old changelog into the new one
+(https://github.com/saltstack-formulas/packages-formula/commit/070172db89f2762b11c73c8d149619ce1f197167[070172d^])
+
+=== Features
+
+* *chocolatey:* add chocolatey management support
+(https://github.com/saltstack-formulas/packages-formula/commit/c0c119524228e30ed19f6fe8714d47b06915ff43[c0c1195^])
+
+== link:++https://github.com/saltstack-formulas/packages-formula/compare/v0.8.0...v0.9.0++[0.9.0^] (2020-03-28)
+
+=== Bug Fixes
+
+* *lint:* remove whitespace
+(https://github.com/saltstack-formulas/packages-formula/commit/c03bb255317716543c092431adf19cac2c0e7463[c03bb25^])
+
+=== Continuous Integration
+
+* *kitchen:* avoid using bootstrap for `master` instances [skip ci]
+(https://github.com/saltstack-formulas/packages-formula/commit/d93e3d2584b2a5a0e65458b65a104f188568251b[d93e3d2^])
+* *kitchen:* reinstall `udev` since removed from pre-salted images
+(https://github.com/saltstack-formulas/packages-formula/commit/a81f2dd4b337ebe2a898ed8ed91e585e5f19b254[a81f2dd^])
+
+=== Features
+
+* *centos:* epel only needed for py-pip
+(https://github.com/saltstack-formulas/packages-formula/commit/a0dd96d6635306a675f89b2b607db4abc4096251[a0dd96d^])
+
+=== Tests
+
+* *pillar:* disable `dxpy` on Ubuntu (works locally)
+(https://github.com/saltstack-formulas/packages-formula/commit/155bdeb7b92d2d06a8d2147e21ad46dff9433aee[155bdeb^]),
+closes https://github.com/verify/issues/L4793-L4859[verify#L4793-L4859]
+* *pillar:* update `node` version for Debian
+(https://github.com/saltstack-formulas/packages-formula/commit/a9f120fa6aea35e96ff3d1ef2338bfaeb742afdf[a9f120f^])
+
+== link:++https://github.com/saltstack-formulas/packages-formula/compare/v0.7.0...v0.8.0++[0.8.0^] (2020-01-20)
+
+=== Bug Fixes
+
+* *archlinux:* fix test setup
+(https://github.com/saltstack-formulas/packages-formula/commit/281846e79165872a17d8bd143f2f6b05e0b4da9b[281846e^])
+* *centos:* fix tests
+(https://github.com/saltstack-formulas/packages-formula/commit/a4d4d1dc734add260ca9b408a67754663c4636bb[a4d4d1d^])
+* *gem:* fix `invalid option: --no-rdoc` & `invalid option: --no-ri`
+(https://github.com/saltstack-formulas/packages-formula/commit/16c4213ab99204e01a040155782a9c158f64e2a9[16c4213^])
+* *golang:* ensure state runs
+(https://github.com/saltstack-formulas/packages-formula/commit/0f992d9c17b36b37078ac3866b9d2ec4240ebf0b[0f992d9^])
+* *golang:* ensure using on `ubuntu`
+(https://github.com/saltstack-formulas/packages-formula/commit/bd909bd1b63d5678431789980f4650dcb8246012[bd909bd^])
+* *golang_spec.rb:* fix `rubocop` errors
+(https://github.com/saltstack-formulas/packages-formula/commit/08340c857a54d67b8310a69558c45c37fd5600fb[08340c8^])
+* *node:* ensure using on `debian`
+(https://github.com/saltstack-formulas/packages-formula/commit/eca4228906d119803a8e0bcf8c4eac33c1babeb3[eca4228^])
+* *pips.sls:* use `tplroot` instead of `slspath`
+(https://github.com/saltstack-formulas/packages-formula/commit/a4e9311a357808fd608c0e0de638ec3d4889235b[a4e9311^]),
+closes
+https://github.com//travis-ci.org/myii/packages-formula/jobs/636188022/issues/L7867[/travis-ci.org/myii/packages-formula/jobs/636188022#L7867^]
+* *rubocop:* add fixes using `rubocop -a --safe`
+(https://github.com/saltstack-formulas/packages-formula/commit/1f72c405de9dd01de1070e37d7d8cbdea41e66ad[1f72c40^])
+* *rubocop:* fix remaining errors manually
+(https://github.com/saltstack-formulas/packages-formula/commit/591d85ab5725e6eb45122adebff6c66d894d86ec[591d85a^])
+* *salt-lint:* fix all errors
+(https://github.com/saltstack-formulas/packages-formula/commit/83ed92bf64ab63ce2a3e0af3f93bb7bb16f87be7[83ed92b^])
+* *yamllint:* fix all errors
+(https://github.com/saltstack-formulas/packages-formula/commit/4176716f7e45bf9023b29c79e2de4572b1a4e5ec[4176716^])
+
+=== Code Refactoring
+
+* *map:* use `config.get` instead of `pillar.get`
+(https://github.com/saltstack-formulas/packages-formula/commit/ca9bbd15a12b2ff5df69fc2c17cb8ace12f095fe[ca9bbd1^])
+* *pillar.amazonlinux:* shorten suite name to `amazon`
+(https://github.com/saltstack-formulas/packages-formula/commit/593a6e5e65557aaca186065314543aa17d13d8f1[593a6e5^])
+* *test_pillars:* rename to make accessible to `yamllint`
+(https://github.com/saltstack-formulas/packages-formula/commit/033ff4453f7c2a3cc23785425b10705ecb6fbaa9[033ff44^])
+
+=== Continuous Integration
+
+* *inspec:* fix Debian tests
+(https://github.com/saltstack-formulas/packages-formula/commit/98c6d2c9bad3e0c4caad51fd27bde3192cf6df0f[98c6d2c^])
+* *inspec:* removing useless inspec tests
+(https://github.com/saltstack-formulas/packages-formula/commit/3615785e52c671d32fe0b71fd784f25e3beff5d1[3615785^])
+* *kitchen:* fix tests with a minimal coverage
+(https://github.com/saltstack-formulas/packages-formula/commit/288f8936528c9dc33af519314aa36ea69747588b[288f893^])
+* *kitchen+inspec:* add Amazonlinux test suite
+(https://github.com/saltstack-formulas/packages-formula/commit/edb0d73ffe0c2a02d3b3d69149ce1edd6b65634e[edb0d73^])
+* *kitchen+inspec:* add Centos test suite
+(https://github.com/saltstack-formulas/packages-formula/commit/d320ccd36b1d1f0a0d70a16a81df7cf0072a1d8c[d320ccd^])
+* *kitchen+inspec:* add fedora30 and fedora29 tests suites
+(https://github.com/saltstack-formulas/packages-formula/commit/e41117c34b6f314b7f10ee5a661985c6cc004018[e41117c^])
+* *kitchen+inspec:* add initial support for opensuse
+(https://github.com/saltstack-formulas/packages-formula/commit/58b1209d9a67d59c3b6a2df4b975c2b4690535af[58b1209^])
+* *kitchen+inspec:* add Ubuntu test suite
+(https://github.com/saltstack-formulas/packages-formula/commit/39ba77d04443abd4d543337ac9cf1e8ae05d5207[39ba77d^])
+* *pillars:* use one retry to prevent excessive slow-down in Travis
+(https://github.com/saltstack-formulas/packages-formula/commit/48ae3c98fdcc9e6117efb006334e2ac93afc3d40[48ae3c9^])
+
+=== Features
+
+* *semantic-release:* update for this formula
+(https://github.com/saltstack-formulas/packages-formula/commit/1755f76fde53a8af1641deda393bd8fad3b40230[1755f76^])
+* implementing semantic release
+(https://github.com/saltstack-formulas/packages-formula/commit/17b433126b6e5f7eb5cbfb93558657262e41699b[17b4331^])
+* *golang:* add go package management
+(https://github.com/saltstack-formulas/packages-formula/commit/284b240c331a109937dbfceebcb83b44f98e18bf[284b240^])
+* *internet:* add retries for internet dependent states
+(https://github.com/saltstack-formulas/packages-formula/commit/7660dbd76f092fc90635804afe5af32cdad66755[7660dbd^])
+
+=== Tests
+
+* *arch:* test initial configuration
+(https://github.com/saltstack-formulas/packages-formula/commit/702e8c32bfaa5f7fc3695fd6421f9c47c0edc057[702e8c3^])
+* *fedora:* merge fedora test suites and pillars
+(https://github.com/saltstack-formulas/packages-formula/commit/89911dc9c8aec1ecd83755f5bf6d1deaf216d349[89911dc^])
+* *golang:* basic integrtaion test & tweaks
+(https://github.com/saltstack-formulas/packages-formula/commit/6c3de2231d136c9d9eb57e232523d0a360ff54f0[6c3de22^])
+* *pillar:* use single ubuntu pillar
+(https://github.com/saltstack-formulas/packages-formula/commit/c69cb5a792186a8a1600987087389229ddf7a67a[c69cb5a^])
+* *pillar:* use specific pillar for `debian`
+(https://github.com/saltstack-formulas/packages-formula/commit/adf1523e08bfeff8d635052a8942b48326e507cb[adf1523^])
+* fix existing tests
+(https://github.com/saltstack-formulas/packages-formula/commit/8e75c9d5c0c4af5fe4e56ecfcdfcc7ea7486d4dc[8e75c9d^])
